@@ -113,3 +113,4 @@ const student = new StudentClass("John", "Doe");
 
 console.log(student.displayName());  // Affiche : "John"
 console.log(student.workOnHomework());  // Affiche : "Currently working"
+

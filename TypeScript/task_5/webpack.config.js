@@ -2,11 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',  // Add this line to set the mode
   entry: './js/main.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,  // Ensure this is available in Webpack 5
   },
   resolve: {
     extensions: ['.ts', '.js'],
@@ -20,13 +20,17 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    static: './dist',  // Serve files from the 'dist' directory
+    hot: true,         // Enable Hot Module Replacement (HMR)
+    open: true,        // Automatically open the browser
+    port: 8080,
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './index.html',  // Ensure this file exists
     }),
   ],
-  devServer: {
-    static: './dist',
-  },
+  mode: 'development',
 };
 
