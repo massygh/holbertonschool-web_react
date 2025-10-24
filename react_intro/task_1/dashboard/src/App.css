@@ -1,42 +1,54 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+:root { --hb-red: #e1003c; }
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #222;
+}
+
+.App { min-height: 100%; display: flex; flex-direction: column; }
+
+/* ===== HEADER (petit hippocampe + gros titre) ===== */
+.App-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 40px 8px;
+}
+.logo-top {
+  height: 120px;           /* ↑ plus grand */
+  width: auto;
+}
+.App-header h1 {
+  margin: 0;
+  font-size: 56px;         /* ↑ taille du titre */
+  font-weight: 700;
+  color: var(--hb-red);
+  line-height: 1;
+}
+
+/* ===== GROS LOGO TEXTE SOUS LE TITRE ===== */
+.brand-row {
+  padding: 0 0px 0px;
+}
+.brand {
+  height: 80px;           /* ↑ taille du logo de marque */
+  width: auto;
+  display: block;
+}
+
+/* ===== CORPS ===== */
+.App-body {
+  border-top: 4px solid var(--hb-red);  /* barre rouge pleine largeur */
+  padding: 18px 24px 24px;
+  flex: 1;
+}
+
+/* ===== FOOTER ===== */
+.App-footer {
+  border-top: 3px solid var(--hb-red);
   text-align: center;
+  padding: 14px 0;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+.App-footer p { margin: 0; font-style: italic; color: #333; }

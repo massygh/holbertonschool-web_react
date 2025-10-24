@@ -1,8 +1,6 @@
-// fileTransformer.js
-const path = require('path');
-
+// CommonJS transformer pour Jest (fichiers statiques)
 module.exports = {
-  process(src, filename) {
-    return `module.exports = ${JSON.stringify(path.basename(filename))};`;
-  },
+  process() {
+    return { code: 'module.exports = "test-file-stub";' };
+  }
 };
